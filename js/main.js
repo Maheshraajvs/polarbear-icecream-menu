@@ -75,3 +75,26 @@ if (!reduced && "onscroll" in window) {
 } else {
   document.documentElement.classList.remove("js");
 }
+
+/* ---------- hero parallax ---------- */
+const art = $("#hero-art");
+if (art && !reduced) {
+  const onScroll = () => {
+    const y = Math.min(scrollY, 600);
+    art.style.transform = "translateY(" + (y * -0.06) + "px)";
+  };
+  addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
+
+/* ---------- gallery drag-to-scroll ---------- */
+const gal = $("#gallery");
+if (gal) {
+  let down = false, sx = 0, sl = 0;
+  gal.addEventListener("pointerdown", (e) => {
+    down = true; sx = e.clientX; sl = gal.scrollLeft;
+    gal.setPointerCapture(e.pointerId);
+  });
+  gal.addEventListener("pointermove", (e) => { if (down) gal.scrollLeft = sl - (e.clientX - sx); });
+  ["pointerup", "pointercancel"].forEach((t) => gal.addEventListener(t, () => { down = false; }));
+}
