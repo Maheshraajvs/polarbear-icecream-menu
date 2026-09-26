@@ -83,6 +83,10 @@ $$(".product__add").forEach((btn) => {
     bag++;
     count.textContent = bag;
     chip.hidden = false;
+    const r = btn.getBoundingClientRect();
+    const sx = Math.max(40, Math.min(r.left + r.width / 2, innerWidth - 40));
+    const sy = Math.max(60, Math.min(r.top + r.height / 2, innerHeight - 60));
+    sprinkle(sx, sy);
     btn.classList.add("ok");
     btn.textContent = "Added \u2713";
     setTimeout(() => { btn.classList.remove("ok"); btn.textContent = "Add +"; }, 1200);
@@ -251,4 +255,92 @@ if (fine && !reduced) {
     });
     b.addEventListener("pointerleave", () => { b.style.transform = ""; });
   });
+}
+
+/* ---------- sprinkle confetti ---------- */
+function sprinkle(x, y) {
+  if (reduced) return;
+  const c = document.createElement("canvas");
+  c.width = innerWidth; c.height = innerHeight;
+  c.style.cssText = "position:fixed;inset:0;z-index:99;pointer-events:none";
+  document.body.appendChild(c);
+  const ctx = c.getContext("2d");
+  const colors = ["#F5C518", "#F27121", "#12A3C4", "#7BC47F", "#ffffff"];
+  const ps = Array.from({ length: 34 }, () => ({
+    x: x, y: y,
+    vx: (Math.random() - 0.5) * 9, vy: -Math.random() * 8 - 3,
+    r: 2 + Math.random() * 3, col: colors[(Math.random() * colors.length) | 0],
+    rot: Math.random() * Math.PI, vr: (Math.random() - 0.5) * 0.3, life: 1
+  }));
+  (function tick() {
+    ctx.clearRect(0, 0, c.width, c.height);
+    let alive = false;
+    for (const p of ps) {
+      p.vy += 0.35; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life -= 0.012;
+      if (p.life > 0 && p.y < c.height + 20) {
+        alive = true;
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+        ctx.globalAlpha = Math.max(p.life, 0); ctx.fillStyle = p.col;
+        ctx.fillRect(-p.r, -p.r / 2, p.r * 2, p.r);
+        ctx.restore();
+      }
+    }
+    if (alive) requestAnimationFrame(tick); else c.remove();
+  })();
+}
+
+/* ---------- flavour duo builder ---------- */
+const duoWrap = $(".flavour-list");
+if (duoWrap) {
+  const col = duoWrap.closest(".flavours__grid").querySelector("div");
+  const duoNote = document.createElement("p");
+  duoNote.className = "duo-note";
+  duoNote.setAttribute("aria-live", "polite");
+  col.appendChild(duoNote);
+  let picks = [];
+  const chips = [...duoWrap.children];
+  const render = () => {
+    chips.forEach((c) => c.classList.toggle("picked", picks.includes(c.textContent)));
+    duoNote.textContent = picks.length === 2
+      ? "Your duo: " + picks[0] + " + " + picks[1] + " \u2014 \u20B999. Bold choice."
+      : picks.length === 1
+        ? "One scoop in \u2014 pick a partner for " + picks[0] + "."
+        : "Tap any two flavours to build your duo.";
+  };
+  const toggle = (li) => {
+    const name = li.textContent;
+    if (picks.includes(name)) picks = picks.filter((p) => p !== name);
+    else { if (picks.length >= 2) picks.shift(); picks.push(name); }
+    render();
+  };
+  chips.forEach((li) => {
+    li.setAttribute("role", "button");
+    li.tabIndex = 0;
+    li.addEventListener("click", () => toggle(li));
+    li.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(li); }
+    });
+  });
+  render();
+}
+
+/* ---------- scroll-velocity marquee ---------- */
+const mTrack = $(".marquee__track");
+if (mTrack && !reduced) {
+  mTrack.style.animation = "none";
+  const anim = mTrack.animate(
+    [{ transform: "translateX(0)" }, { transform: "translateX(-50%)" }],
+    { duration: 30000, iterations: Infinity, easing: "linear" }
+  );
+  let rate = 1, target = 1, lastY = scrollY;
+  addEventListener("scroll", () => {
+    target = 1 + Math.min(Math.abs(scrollY - lastY) * 0.25, 7);
+    lastY = scrollY;
+  }, { passive: true });
+  (function decay() {
+    target += (1 - target) * 0.06;
+    rate += (target - rate) * 0.2;
+    anim.playbackRate = rate;
+    requestAnimationFrame(decay);
+  })();
 }
