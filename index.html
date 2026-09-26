@@ -80,14 +80,28 @@
   </header>
 
   <main>
-    <section class="intro" aria-labelledby="intro-title">
-      <div class="intro__left reveal">
-        <h2 id="intro-title">That Sunday feeling,<br>any day you like.</h2>
-      </div>
-      <div class="intro__right reveal">
+    <section class="hero" aria-labelledby="intro-title">
+      <div class="hero__text reveal">
+        <p class="hero__kick">Est. 2008 &middot; The Ice Cream Sundae Zone</p>
+        <h2 id="intro-title">That <em>Sunday</em> feeling,<br>any day you like.</h2>
         <p>Sundaes built on fresh milk from farms close to our facilities, served across
         185+ outlets in India &mdash; 100% dairy, 100% vegetarian, made for everyday celebration.</p>
-        <p class="intro__counts tabular-nums">50 items on this page &middot; 21 duo flavours &middot; prices in ₹</p>
+        <p class="hero__counts tabular-nums">50 items &middot; 21 duo flavours &middot; prices in ₹</p>
+        <p class="hero__cta">
+          <a class="btn" href="#catalog">See the menu</a>
+          <a class="btn btn--ghost" href="#flavours">Flavour Duo &mdash; ₹99</a>
+        </p>
+      </div>
+      <div class="hero__art" id="hero-art">
+        <figure class="polaroid polaroid--a"><img src="https://polarbear.co.in/wp-content/uploads/2020/03/deathbychocolate.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2020/03/deathbychocolate.jpg" alt="Death By Chocolate sundae" loading="eager" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"></figure>
+        <figure class="polaroid polaroid--b"><img src="https://polarbear.co.in/wp-content/uploads/2022/01/fruit-sundae-1.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2022/01/fruit-sundae-1.jpg" alt="Fruit sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"></figure>
+        <figure class="polaroid polaroid--c"><img src="https://polarbear.co.in/wp-content/uploads/2020/03/tiramisu.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2020/03/tiramisu.jpg" alt="Tiramisu sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"></figure>
+        <svg class="sticker" viewBox="0 0 100 100" aria-hidden="true">
+          <defs><path id="sticker-circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+          <circle cx="50" cy="50" r="49" fill="#12A3C4"/>
+          <circle cx="50" cy="50" r="23" fill="#F27121"/>
+          <text><textPath href="#sticker-circ">100% VEG &#8226; 100% DAIRY &#8226; SINCE 2008 &#8226; </textPath></text>
+        </svg>
       </div>
     </section>
 
@@ -667,7 +681,24 @@
       </div>
     </section>
 
-    <section class="flavours" id="flavours" aria-labelledby="flavours-title">
+    <section class="gallery" aria-label="Fresh from the scoop zone">
+      <div class="gallery__head">
+        <h2 class="reveal">Fresh from the zone</h2>
+        <p class="reveal">Drag or swipe &mdash; real sundaes, straight from the counter.</p>
+      </div>
+      <div class="gallery__track" id="gallery">
+        <figure class="gallery__card"><img src="https://polarbear.co.in/wp-content/uploads/2019/06/chocozilla.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2019/06/chocozilla.jpg" alt="Chocozilla sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"><figcaption>Chocozilla <span>₹195</span></figcaption></figure>
+        <figure class="gallery__card"><img src="https://polarbear.co.in/wp-content/uploads/2020/03/mega-deathbychoclate.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2020/03/mega-deathbychoclate.jpg" alt="Mega DBC sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"><figcaption>Mega DBC <span>₹625</span></figcaption></figure>
+        <figure class="gallery__card"><img src="https://polarbear.co.in/wp-content/uploads/2020/03/redvelvetchocosin.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2020/03/redvelvetchocosin.jpg" alt="Red Velvet Choco Sin sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"><figcaption>Red Velvet Choco Sin <span>₹195</span></figcaption></figure>
+        <figure class="gallery__card"><img src="https://polarbear.co.in/wp-content/uploads/2019/06/lychee-sundae.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2019/06/lychee-sundae.jpg" alt="Lychee Sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"><figcaption>Lychee Sundae <span>₹195</span></figcaption></figure>
+        <figure class="gallery__card"><img src="https://polarbear.co.in/wp-content/uploads/2019/06/dry-fruit-special.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2019/06/dry-fruit-special.jpg" alt="Dry Fruit Special sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"><figcaption>Dry Fruit Special <span>₹185</span></figcaption></figure>
+        <figure class="gallery__card"><img src="https://polarbear.co.in/wp-content/uploads/2019/06/oreo-monster.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2019/06/oreo-monster.jpg" alt="Cookie Monster sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"><figcaption>Cookie Monster <span>₹195</span></figcaption></figure>
+        <figure class="gallery__card"><img src="https://polarbear.co.in/wp-content/uploads/2023/02/Espresso-Brownie-Fudge.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2023/02/Espresso-Brownie-Fudge.jpg" alt="Espresso Brownie Fudge sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"><figcaption>Espresso Brownie Fudge <span>₹210</span></figcaption></figure>
+        <figure class="gallery__card"><img src="https://polarbear.co.in/wp-content/uploads/2022/03/BlueBerry-Bliss.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2022/03/BlueBerry-Bliss.jpg" alt="Blueberry Bliss sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"><figcaption>Blueberry Bliss <span>₹159</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="flavours flavours--blue" id="flavours" aria-labelledby="flavours-title">
       <hr class="rule" aria-hidden="true">
       <div class="flavours__grid">
         <div>
@@ -705,7 +736,7 @@
     <section class="milk" id="scoop-note" aria-labelledby="milk-title">
       <hr class="rule" aria-hidden="true">
       <div class="milk__grid">
-        <h2 id="milk-title" class="reveal">Reclaim your Sunday.</h2>
+        <h2 id="milk-title" class="reveal">Reclaim your <span class="hl">Sunday</span>.</h2>
         <p class="reveal">The whole idea behind Polar Bear &mdash; the relaxed, easy joy of a
         Sunday evening, served in a glass. Fresh milk, real fruit, roasted nuts, and the best
         of Indian tastes: kulfi beside Belgian chocolate, paan beside red velvet. Made in
@@ -721,7 +752,7 @@
     </section>
   </main>
 
-  <footer class="foot-stmt">
+  <footer class="foot-stmt foot-stmt--blue">
     <p class="foot-stmt__line">Go on, order the second scoop.</p>
     <div class="foot-stmt__meta">
       <span class="wordmark">Polar Bear &middot; The Ice Cream Sundae Zone</span>
