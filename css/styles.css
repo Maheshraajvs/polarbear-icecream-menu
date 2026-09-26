@@ -12,18 +12,18 @@
 
 /* ============ tokens ============ */
 :root {
-  --paper:      oklch(86% 0.155 92);
-  --paper-2:     oklch(98.5% 0.012 95);
-  --paper-3:     oklch(92% 0.09 92);
-  --ink:         oklch(33% 0.115 258);
-  --ink-2:       oklch(43% 0.095 255);
-  --accent:      oklch(63% 0.19 42);
-  --accent-deep: oklch(53% 0.185 40);
-  --rule:        oklch(79% 0.115 92);
-  --veg:         oklch(52% 0.135 150);
-  --sw-shadow:   oklch(78% 0.11 92 / 45%);
+  --paper:      oklch(21% 0.075 258);
+  --paper-2:     oklch(26% 0.085 258);
+  --paper-3:     oklch(33% 0.095 258);
+  --ink:         oklch(88% 0.135 92);
+  --ink-2:       oklch(80% 0.1 88);
+  --accent:      oklch(68% 0.19 43);
+  --accent-deep: oklch(82% 0.155 62);
+  --rule:        oklch(88% 0.135 92 / 34%);
+  --veg:         oklch(72% 0.16 150);
+  --sw-shadow:   oklch(10% 0.04 258 / 55%);
   --glass:       #ffffff;
-  --glass-line:  oklch(88% 0.025 90);
+  --glass-line:  oklch(58% 0.05 258);
 
   --font-display: "Wayward Sans", "Baloo 2", "Trebuchet MS", cursive;
   --font-body:    "Nunito Sans PB", "Karla", system-ui, sans-serif;
@@ -263,7 +263,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 @keyframes pb-spin { to { transform: rotate(360deg); } }
 
 /* ============ gallery ============ */
-.gallery { background: var(--paper-2); border-block: 1px solid var(--rule); padding: var(--space-xl) 0 var(--space-2xl); }
+.gallery { background: oklch(23.5% 0.08 258); border-block: 1px solid var(--rule); padding: var(--space-xl) 0 var(--space-2xl); }
 .gallery__head { max-width: 1160px; margin: 0 auto var(--space-lg); padding: 0 var(--page-gutter); display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-sm); }
 .gallery__head h2 { font-size: var(--text-2xl); margin: 0; }
 .gallery__head p { margin: 0; color: var(--ink-2); font-size: var(--text-sm); }
@@ -430,6 +430,41 @@ html { scrollbar-color: var(--ink) var(--paper); }
   .float-media { display: none; }
   .menu-row__name { font-size: var(--text-md) !important; }
 }
+
+/* ============ after-dark theme layer ============ */
+.hero { position: relative; overflow: hidden; }
+.hero::before, .hero::after {
+  content: ""; position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
+}
+.hero::before { top: -18%; right: -12%; width: 55vw; height: 55vw; background: radial-gradient(circle, oklch(68% 0.19 43 / 22%), transparent 62%); }
+.hero::after { bottom: -28%; left: -14%; width: 50vw; height: 50vw; background: radial-gradient(circle, oklch(60% 0.12 242 / 20%), transparent 62%); }
+.hero__row { position: relative; z-index: 1; }
+.hero__kick, .hero__title { position: relative; z-index: 1; }
+.hero { background-image: radial-gradient(oklch(88% 0.135 92 / 30%) 1.4px, transparent 1.4px); }
+.hero__word { -webkit-text-stroke: 1.5px oklch(88% 0.135 92 / 26%); }
+.cursor { mix-blend-mode: normal; }
+.dock { background: oklch(21% 0.075 258 / 80%); }
+.dock__cta { color: oklch(21% 0.075 258) !important; }
+.gallery__card figcaption { color: oklch(30% 0.1 258); }
+.gallery__card figcaption span { color: oklch(43% 0.095 255); }
+.gallery__card { box-shadow: 0 14px 28px oklch(8% 0.04 258 / 50%); border-color: oklch(88% 0.135 92 / 25%); }
+.polaroid { box-shadow: 0 16px 40px oklch(8% 0.04 258 / 60%); }
+.float-media { box-shadow: 0 18px 44px oklch(8% 0.04 258 / 60%); }
+.menu-row:hover { background: oklch(88% 0.135 92 / 10%); }
+.product__media { box-shadow: 5px 5px 0 oklch(8% 0.04 258 / 55%); }
+.product:hover .product__media { box-shadow: 9px 11px 0 oklch(8% 0.04 258 / 65%); }
+.product__price { box-shadow: 2px 2px 0 oklch(8% 0.04 258 / 50%); }
+.btn { box-shadow: 5px 5px 0 oklch(8% 0.04 258 / 60%); }
+.btn:hover { box-shadow: 8px 8px 0 oklch(8% 0.04 258 / 60%); }
+.flavours--blue .flavour-list li { box-shadow: 3px 3px 0 oklch(30% 0.1 258 / 35%); }
+.flavours--blue .flavours__grid p { color: oklch(30% 0.1 258 / 85%); }
+.flavours--blue .rule { border-top-color: oklch(30% 0.1 258 / 25%); }
+.foot-stmt--blue .foot-stmt__meta { border-top-color: oklch(30% 0.1 258 / 25%); }
+.foot-stmt--blue .foot-stmt__meta .muted { color: oklch(30% 0.1 258 / 80%); }
+.badge { background: oklch(21% 0.075 258); }
+.toast { color: var(--ink); }
+html { scrollbar-color: var(--ink) var(--paper); }
+::-webkit-scrollbar-track { background: var(--paper); }
 
 /* ============ responsive ============ */
 @media (max-width: 1024px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
