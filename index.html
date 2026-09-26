@@ -79,29 +79,39 @@
     <hr class="mast-rule double" aria-hidden="true">
   </header>
 
+  <nav class="dock" id="dock" aria-label="Quick nav">
+    <a href="#catalog">Menu</a>
+    <a href="#fresh">Photos</a>
+    <a href="#flavours">Flavours</a>
+    <a href="#scoop-note">Our milk</a>
+    <a class="dock__cta" href="#catalog">Order up &rarr;</a>
+  </nav>
+
   <main>
     <section class="hero" aria-labelledby="intro-title">
-      <div class="hero__text reveal">
-        <p class="hero__kick">Est. 2008 &middot; The Ice Cream Sundae Zone</p>
-        <h2 id="intro-title">That <em>Sunday</em> feeling,<br>any day you like.</h2>
-        <p>Sundaes built on fresh milk from farms close to our facilities, served across
-        185+ outlets in India &mdash; 100% dairy, 100% vegetarian, made for everyday celebration.</p>
-        <p class="hero__counts tabular-nums">50 items &middot; 21 duo flavours &middot; prices in ₹</p>
-        <p class="hero__cta">
-          <a class="btn" href="#catalog">See the menu</a>
-          <a class="btn btn--ghost" href="#flavours">Flavour Duo &mdash; ₹99</a>
-        </p>
-      </div>
-      <div class="hero__art" id="hero-art">
-        <figure class="polaroid polaroid--a"><img src="https://polarbear.co.in/wp-content/uploads/2020/03/deathbychocolate.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2020/03/deathbychocolate.jpg" alt="Death By Chocolate sundae" loading="eager" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"></figure>
-        <figure class="polaroid polaroid--b"><img src="https://polarbear.co.in/wp-content/uploads/2022/01/fruit-sundae-1.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2022/01/fruit-sundae-1.jpg" alt="Fruit sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"></figure>
-        <figure class="polaroid polaroid--c"><img src="https://polarbear.co.in/wp-content/uploads/2020/03/tiramisu.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2020/03/tiramisu.jpg" alt="Tiramisu sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"></figure>
-        <svg class="sticker" viewBox="0 0 100 100" aria-hidden="true">
-          <defs><path id="sticker-circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
-          <circle cx="50" cy="50" r="49" fill="#12A3C4"/>
-          <circle cx="50" cy="50" r="23" fill="#F27121"/>
-          <text><textPath href="#sticker-circ">100% VEG &#8226; 100% DAIRY &#8226; SINCE 2008 &#8226; </textPath></text>
-        </svg>
+      <h2 id="intro-title" class="hero__title reveal">That <em class="sun">Sunday</em> feeling,<br>any day you like.</h2>
+      <div class="hero__row">
+        <div class="hero__text reveal">
+          <p>Sundaes built on fresh milk from farms close to our facilities, served across
+          185+ outlets in India &mdash; 100% dairy, 100% vegetarian, made for everyday celebration.</p>
+          <p class="hero__counts tabular-nums">50 items &middot; 21 duo flavours &middot; prices in ₹</p>
+          <p class="hero__cta">
+            <a class="btn" href="#catalog">See the menu</a>
+            <a class="btn btn--ghost" href="#flavours">Flavour Duo &mdash; ₹99</a>
+          </p>
+        </div>
+        <div class="hero__art" id="hero-art">
+          <span class="hero__word" aria-hidden="true">SUNDAE</span>
+          <figure class="polaroid polaroid--a" data-depth="26"><img src="https://polarbear.co.in/wp-content/uploads/2020/03/deathbychocolate.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2020/03/deathbychocolate.jpg" alt="Death By Chocolate sundae" loading="eager" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"></figure>
+          <figure class="polaroid polaroid--b" data-depth="14"><img src="https://polarbear.co.in/wp-content/uploads/2022/01/fruit-sundae-1.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2022/01/fruit-sundae-1.jpg" alt="Fruit sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"></figure>
+          <figure class="polaroid polaroid--c" data-depth="40"><img src="https://polarbear.co.in/wp-content/uploads/2020/03/tiramisu.jpg" data-o="https://polarbear.co.in/wp-content/uploads/2020/03/tiramisu.jpg" alt="Tiramisu sundae" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='https://web.archive.org/web/2im_/'+this.dataset.o}else{this.remove()}"></figure>
+          <svg class="sticker" data-depth="60" viewBox="0 0 100 100" aria-hidden="true">
+            <defs><path id="sticker-circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+            <circle cx="50" cy="50" r="49" fill="#12A3C4"/>
+            <circle cx="50" cy="50" r="23" fill="#F27121"/>
+            <text><textPath href="#sticker-circ">100% VEG &#8226; 100% DAIRY &#8226; SINCE 2008 &#8226; </textPath></text>
+          </svg>
+        </div>
       </div>
     </section>
 
@@ -116,7 +126,7 @@
 
     <section class="catalog" id="catalog" aria-labelledby="catalog-title">
       <div class="catalog__head">
-        <h2 id="catalog-title" class="catalog__title reveal">The catalog</h2>
+        <h2 id="catalog-title" class="catalog__title reveal"><span class="sec-no">01</span> The catalog</h2>
         <ul class="tabs reveal" role="tablist" aria-label="Filter the catalog">
           <li><button class="tab" role="tab" aria-selected="true" data-filter="All">All<span class="count">50</span></button></li>
           <li><button class="tab" role="tab" aria-selected="false" data-filter="Sundaes">Sundaes<span class="count">28</span></button></li>
@@ -681,9 +691,9 @@
       </div>
     </section>
 
-    <section class="gallery" aria-label="Fresh from the scoop zone">
+    <section class="gallery" id="fresh" aria-label="Fresh from the scoop zone">
       <div class="gallery__head">
-        <h2 class="reveal">Fresh from the zone</h2>
+        <h2 class="reveal"><span class="sec-no">02</span> Fresh from the zone</h2>
         <p class="reveal">Drag or swipe &mdash; real sundaes, straight from the counter.</p>
       </div>
       <div class="gallery__track" id="gallery">
@@ -702,7 +712,7 @@
       <hr class="rule" aria-hidden="true">
       <div class="flavours__grid">
         <div>
-          <h2 id="flavours-title" class="reveal">The Flavour Duo.</h2>
+          <h2 id="flavours-title" class="reveal"><span class="sec-no">03</span> The Flavour Duo.</h2>
           <p class="reveal">Pick any two flavours at ₹99, dine-in only. Twenty-one here,
           seventy-plus across our stores — two scoops, your call.</p>
         </div>
@@ -736,7 +746,7 @@
     <section class="milk" id="scoop-note" aria-labelledby="milk-title">
       <hr class="rule" aria-hidden="true">
       <div class="milk__grid">
-        <h2 id="milk-title" class="reveal">Reclaim your <span class="hl">Sunday</span>.</h2>
+        <h2 id="milk-title" class="reveal"><span class="sec-no">04</span> Reclaim your <span class="hl">Sunday</span>.</h2>
         <p class="reveal">The whole idea behind Polar Bear &mdash; the relaxed, easy joy of a
         Sunday evening, served in a glass. Fresh milk, real fruit, roasted nuts, and the best
         of Indian tastes: kulfi beside Belgian chocolate, paan beside red velvet. Made in
